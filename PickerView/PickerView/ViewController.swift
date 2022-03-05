@@ -9,26 +9,41 @@ import UIKit
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    let MAX_ARRAY_NUM = 10
+    let MAX_ARRAY_NUM = 8
     let PICKER_VIEW_COLUMN = 1
+    let PICKER_VIEW_HEIGHT:CGFloat = 80
+    var imageArray = [UIImage?]()
     var imageFileName = ["Phone_GP-0029.jpg", "Phone_GP-0036.jpg", "Phone_GP-0065.jpg", "Phone_GP-0072.jpg", "Phone_GP-0095.jpg", "Phone_GP-0113.jpg", "Phone_GP-0176.jpg", "Phone_GP-0188.jpg"]
+    
+    @IBOutlet weak var pickerImage: UIPickerView!
+    @IBOutlet weak var lblImageFileName: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return PICKER_VIEW_COLUMN
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return PICKER_VIEW_HEIGHT
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return imageFileName.count
     }
     
-    // titleForRow 인수를 가지는 Delegate 메서드
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return imageFileName[row]
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component:Int, reusing view: UIView?) -> UIView {
+        let imageView = UIImageView(image: imageArray[row])
+        imageView.frame = CGRect(x: 0, y: 0, width: 200, height: 150)
+        
+        return imageView
     }
     
-    @IBOutlet weak var pickerImage: UIPickerView!
-    @IBOutlet weak var lblImageFileName: UILabel!
-    @IBOutlet weak var imageView: UIImageView!
+    // titleForRow 인수를 가지는 Delegate 메서드
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        lblImageFileName.text = imageFileName[row]
+        imageView.image = imageArray[row]
+    }
+    
     
     // PickerView를 ViewController에 Delegate 설정한다.
     // - 특정 객체와 상호 작용할 때 메시지를 넘기면 그 메시지에 대한 책임은 델리게이트로 위임된다.
@@ -36,7 +51,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        for i in 0 ..< MAX_ARRAY_NUM {
+            let image = UIImage(named: imageFileName[i])
+            imageArray.append(image)
+        }
+        lblImageFileName.text = imageFileName[0]
+        imageView.image = imageArray[0]
     }
 
 
