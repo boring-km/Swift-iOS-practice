@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
+//  WebViewController.swift
 //  WebView
 //
-//  Created by kangmin on 2022/03/07.
+//  Created by kangmin on 2022/03/10.
 //
 
 import UIKit
 import WebKit
 
-class ViewController: UIViewController, WKNavigationDelegate {
+class WebViewController: UIViewController, WKNavigationDelegate {
     
     @IBOutlet var urlTextField: UITextField!
     @IBOutlet var webView: WKWebView!
