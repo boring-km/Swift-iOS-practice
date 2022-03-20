@@ -88,8 +88,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wa8-wd-kBM">
-                                <rect key="frame" x="16" y="182" width="358" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3cC-NU-KH8">
+                                <rect key="frame" x="16" y="182" width="332" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -100,9 +100,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="수정화면" id="weL-ix-8zR"/>
                     <connections>
-                        <outlet property="inputTextField" destination="wa8-wd-kBM" id="TMk-Zt-Gwq"/>
+                        <outlet property="inputTextField" destination="3cC-NU-KH8" id="cv4-E8-Ufg"/>
                         <outlet property="lblWay" destination="3Hd-CD-lzh" id="xA5-B3-liA"/>
-                        <outlet property="txMessage" destination="GfI-z9-NfI" id="DsQ-FM-Ogs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12L-cT-a1j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
