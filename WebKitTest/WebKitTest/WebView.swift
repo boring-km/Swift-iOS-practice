@@ -35,7 +35,7 @@ struct WebView: UIViewRepresentable, WebViewHandlerDelegate {
         Coordinator(self)
     }
     
-    let handlerName = "testHandler"
+    let handlerName = "javascript_object"
     
     // 뷰 객체를 생성하고 초기 상태를 구성합니다. 딱 한 번만 호출됩니다.
     func makeUIView(context: Context) -> WKWebView {

@@ -8,9 +8,11 @@ class MyPage extends React.Component {
       // Android: window.____커스텀_interface____.___커스텀_method___(___parameters___, ...)
       //     => interface 이름과 통일하고, method 이름을 postMessage()로 설정하면 iOS와 최대한 비슷하게 가능하지만, 결국 같이 사용하는 것은 불가능
       // Flutter(inappwebview): window.flutter_inappwebview.callHandler('___handler_name___', ___parameters___, ...).then( function(result) { } )
-      // Flutter(webview_flutter): __커스텀_interface__.postMessage(___parameters___, ...);
+      // Flutter(webview_flutter): window.__커스텀_interface__.postMessage(___parameters___, ...);
       // @ts-ignore
-      window.webkit.messageHandlers.javascript_object.postMessage("hello")
+      // window.webkit.messageHandlers.javascript_object.postMessage("hello")
+      // @ts-ignore[
+      // window.Toaster.postMessage("hello")
 
     } catch (e) {
 
