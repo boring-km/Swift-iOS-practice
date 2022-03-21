@@ -3,8 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  // @ts-ignore
-  window.webkit.messageHandlers.testHandler.postMessage("hello")
+
   return (
     <div className="App">
       <header className="App-header">
