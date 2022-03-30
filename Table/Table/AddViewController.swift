@@ -21,7 +21,10 @@ class AddViewController: UIViewController {
     
 
     @IBAction func btnAddItem(_ sender: UIButton) {
-        
+        items.append(tfAddItem.text!)
+        itemsImageFile.append("ic_access_alarm.png")
+        tfAddItem.text = ""
+        _ = navigationController?.popViewController(animated: true)
     }
 
 }
