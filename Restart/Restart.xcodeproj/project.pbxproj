@@ -15,6 +15,7 @@
 		AE491F0028DB482700662217 /* success.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AE491EFE28DB482700662217 /* success.m4a */; };
 		AE74057128E330D600BE9FAA /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE74057028E330D600BE9FAA /* OnboardingView.swift */; };
 		AE74057328E330E300BE9FAA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE74057228E330E300BE9FAA /* HomeView.swift */; };
+		AE920F6D28E49661008F7ABC /* CircleGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE920F6C28E49661008F7ABC /* CircleGroupView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		AE491F0428DB499C00662217 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AE74057028E330D600BE9FAA /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		AE74057228E330E300BE9FAA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		AE920F6C28E49661008F7ABC /* CircleGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleGroupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		AE491F0128DB482C00662217 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AE920F6C28E49661008F7ABC /* CircleGroupView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE920F6D28E49661008F7ABC /* CircleGroupView.swift in Sources */,
 				AE74057128E330D600BE9FAA /* OnboardingView.swift in Sources */,
 				AE74057328E330E300BE9FAA /* HomeView.swift in Sources */,
 				AE491EF228DB47A000662217 /* ContentView.swift in Sources */,
