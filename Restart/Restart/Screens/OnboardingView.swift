@@ -9,7 +9,15 @@ import SwiftUI
 
 struct OnboardingView: View {
   
+
+  // MARK: - PROPERTY
+  
   @AppStorage("onboarding") var isOnboardingViewActive: Bool = true
+  
+  @State private var buttonWidth: Double = UIScreen.main.bounds.width - 80
+  @State private var buttonOffset: CGFloat = 0
+  
+  // MARK: - body
   
   var body: some View {
     ZStack {
@@ -36,6 +44,8 @@ struct OnboardingView: View {
           .padding(.horizontal, 10)
         }
         
+        // MARK: - CENTER
+        
         ZStack {
           CircleGroupView(ShapeColor: .white, ShapeOpacity: 0.2)
           
@@ -46,8 +56,10 @@ struct OnboardingView: View {
         
         Spacer()
         
+        // MARK: - FOOTER
+        
         ZStack {
-            // 1. background
+          // 1. background
           
           Capsule()
             .fill(Color.white.opacity(0.2))
@@ -56,7 +68,7 @@ struct OnboardingView: View {
             .fill(Color.white.opacity(0.2))
             .padding(8)
           
-            // 2. call-to-action
+          // 2. call-to-action
           
           Text("밀어서 시작하기")
             .font(.system(.title3, design: .rounded))
@@ -64,17 +76,17 @@ struct OnboardingView: View {
             .foregroundColor(.white)
             .offset(x: 20)
           
-            // 3. capsule
+          // 3. capsule
           
           HStack {
             Capsule()
               .fill(Color("ColorRed"))
-              .frame(width: 80)
+              .frame(width: buttonOffset + 80)
             
             Spacer()
           }
           
-            // 4. circle
+          // 4. circle
           
           HStack {
             ZStack {
@@ -88,22 +100,35 @@ struct OnboardingView: View {
             }
             .foregroundColor(.white)
             .frame(width: 80, height: 80, alignment: .center)
-            .onTapGesture {
-              isOnboardingViewActive = false
-            }
+            .offset(x: buttonOffset)
+            .gesture(
+              DragGesture()
+                .onChanged { gesture in
+                  if gesture.translation.width > 0 && buttonOffset <= buttonWidth - 80 {
+                    buttonOffset = gesture.translation.width
+                  }
+                }
+                .onEnded { _ in
+                  if buttonOffset > buttonWidth / 2 {
+                    buttonOffset = buttonWidth - 80
+                    isOnboardingViewActive = false
+                  } else {
+                    buttonOffset = 0
+                  }
+                }
+            ) //: GESTURE
             
             Spacer()
-          }
-        }
-        .frame(height: 80, alignment: .center)
+          } //: HSTACK
+        } //: FOOTER
+        .frame(width: buttonWidth, height: 80, alignment: .center)
         .padding()
       } //: VSTACK
-      
     } //: ZSTACK
-    
   }
 }
 
+// MARK: - PREVIEW
 struct OnboardingView_Previews: PreviewProvider {
   static var previews: some View {
     OnboardingView()
